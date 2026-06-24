@@ -28,7 +28,6 @@ export default function ReturnsPage() {
 
   return (
     <div className="returns-layout">
-      {/* Форма заявки - слева */}
       <div className="cart-list">
         <h2 style={{ marginBottom: '24px' }}>Оформление возврата</h2>
         <form onSubmit={handleSubmit}>
@@ -53,7 +52,6 @@ export default function ReturnsPage() {
         </form>
       </div>
 
-      {/* Политика возврата - справа */}
       <div className="returns-info">
         <h3 style={{ marginBottom: '16px' }}>Политика возврата</h3>
         <p style={{ marginBottom: '16px', lineHeight: 1.7 }}>

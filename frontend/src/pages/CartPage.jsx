@@ -27,11 +27,9 @@ export default function CartPage() {
       <h1 className="cart-page-title">Корзина</h1>
 
       <div className="cart-layout">
-        {/* Список товаров */}
         <div className="cart-items">
           {cart.map((item) => (
             <div key={item.id} className="cart-item-card">
-              {/* Изображение */}
               <div className="cart-item-image">
                 {item.image ? (
                   <img src={item.image} alt={item.name} />
@@ -40,7 +38,7 @@ export default function CartPage() {
                 )}
               </div>
 
-              {/* Информация о товаре */}
+
               <div className="cart-item-details">
                 <h3>{item.name}</h3>
                 {item.sku && (
@@ -67,7 +65,6 @@ export default function CartPage() {
                 </div>
               </div>
 
-              {/* Цена + удаление (на десктопе — справа, на мобильном — снизу) */}
               <div className="cart-item-actions">
                 <div className="cart-item-total-price">
                   {item.price * item.qty} ₽
@@ -85,7 +82,6 @@ export default function CartPage() {
           ))}
         </div>
 
-        {/* Блок итогов */}
         <aside className="cart-summary">
           <h3>Итого</h3>
           <div className="summary-line">

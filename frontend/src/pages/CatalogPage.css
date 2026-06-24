@@ -1,4 +1,3 @@
-/* ===== МАКЕТ КАТАЛОГА ===== */
 .catalog-layout {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -9,7 +8,6 @@
   align-items: start;
 }
 
-/* ===== БОКОВАЯ ПАНЕЛЬ ФИЛЬТРОВ ===== */
 .filter-sidebar {
   background: var(--white);
   padding: 24px;
@@ -119,7 +117,6 @@
   transform: scale(1.2);
 }
 
-/* ===== ЧЕКБОКСЫ БРЕНДОВ ===== */
 .filter-sidebar .form-checkbox {
   display: flex;
   align-items: center;
@@ -141,7 +138,6 @@
   font-size: var(--font-size-base);
 }
 
-/* ===== ЗАГОЛОВОК СЕКЦИИ ===== */
 .section-header {
   text-align: left;
   margin-bottom: 24px;
@@ -163,14 +159,12 @@
   color: var(--gray-text);
 }
 
-/* ===== СЕТКА ТОВАРОВ (3 КОЛОНКИ) ===== */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-/* ===== КАРТОЧКА ТОВАРА ===== */
 .product-card {
   background: var(--white);
   border-radius: var(--radius);
@@ -256,7 +250,6 @@
   color: var(--navy-dark);
 }
 
-/* ===== КНОПКИ ДЕЙСТВИЙ ===== */
 .product-actions {
   display: flex;
   gap: 8px;
@@ -277,7 +270,6 @@
   flex-shrink: 0;
 }
 
-/* Кнопка "В корзину" */
 .btn-cart.add-to-cart {
   background: #145319;
 }
@@ -307,7 +299,6 @@
   background: #ff4747;
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 1024px) {
   .catalog-layout {
     grid-template-columns: 240px 1fr;

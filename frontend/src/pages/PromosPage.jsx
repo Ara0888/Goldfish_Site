@@ -27,7 +27,6 @@ export default function PromosPage() {
         <h2>Акции и <span>скидки</span></h2>
       </div>
 
-      {/* Сетка промокодов */}
       <div className="promo-cards-grid">
   {promoCodes.map((promo, idx) => (
     <div key={idx} className="promo-card-item">

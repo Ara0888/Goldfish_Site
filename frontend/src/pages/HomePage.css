@@ -6,7 +6,6 @@
   color: #1e293b;
 }
 
-/* 1. Секция Hero (Баннер) */
 .hero-section {
   background: linear-gradient(180deg, #1A1A5E 100%, #5B6BD4 0%, #4A5ABF 50%, #1A1A5E 100%);
   color: #ffffff;
@@ -15,7 +14,6 @@
   overflow: hidden;
 }
 
-/* Двухколоночная сетка из оригинального макета */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -27,7 +25,7 @@
   z-index: 10;
 }
 
-/* Левая колонка (Заголовок + кнопки) */
+
 .hero-left {
   display: flex;
   flex-direction: column;
@@ -48,14 +46,14 @@
   color: #59D37C;
 }
 
-/* Стек кнопок строго под заголовком */
+
 .hero-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
   width: 100%;
-  max-width: 260px; /* Ширина кнопок как на макете */
+  max-width: 260px;
 }
 
 .btn-green {
@@ -115,7 +113,7 @@
   transform: translateY(-2px);
 }
 
-/* Правая колонка (Описание сайта) */
+
 .hero-right {
   color: #cbd5e1;
   font-size: 1.15rem;
@@ -125,7 +123,7 @@
   justify-self: center;
 }
 
-/* --- Анимация пузырьков --- */
+
 .bubbles-container {
   position: absolute;
   inset: 0;
@@ -155,10 +153,10 @@
   }
 }
 
-/* --- Настройка волны (без лишних линий и швов) --- */
+
 .waves-container {
   position: absolute;
-  bottom: -1px; /* Сдвиг вниз для устранения микро-линии */
+  bottom: -1px;
   left: 0;
   width: 150%;
   overflow: hidden;
@@ -170,20 +168,19 @@
 .waves-container svg {
   position: relative;
   display: block;
-  width: 200%; /* Увеличено для непрерывной анимации сдвига */
+  width: 200%;
   height: 100px;
 }
 
 @keyframes waveMove {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Движение в одном направлении без швов */
+  100% { transform: translateX(-50%); }
 }
 
 .wave-single {
   animation: waveMove 15s linear infinite;
 }
 
-/* 2. Секция преимуществ */
 .advantages-section {
   padding: 100px 24px;
   background-color: #ffffff;
@@ -219,7 +216,6 @@
   line-height: 1.6;
 }
 
-/* Сетка преимуществ */
 .adv-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -253,7 +249,6 @@
   font-size: 24px;
 }
 
-/* Цвета карточек преимуществ */
 .card-darkblue {
   background-color: #151B40;
   color: #ffffff;
@@ -298,7 +293,6 @@
   opacity: 0.9;
 }
 
-/* Адаптивность для мобильных телефонов и планшетов */
 @media (max-width: 991px) {
   .hero-grid {
     grid-template-columns: 1fr;

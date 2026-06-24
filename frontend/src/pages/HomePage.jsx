@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './HomePage.css';
 
 export default function HomePage() {
-  // Параметры для анимированных пузырьков
   const bubbles = [
     { size: '12px', left: '8%', delay: '0s', duration: '14s' },
     { size: '24px', left: '18%', delay: '2s', duration: '18s' },
@@ -16,11 +15,7 @@ export default function HomePage() {
 
   return (
     <div className="homepage-container">
-
-      {/* 1. HERO СЕКЦИЯ */}
       <section className="hero-section">
-        
-        {/* Анимированные пузыри */}
         <div className="bubbles-container">
           {bubbles.map((b, i) => (
             <div
@@ -37,10 +32,8 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Двухколоночный контент как на макете */}
         <div className="hero-grid">
-          
-          {/* Левая колонка: Заголовок и кнопки строго под ним */}
+
           <div className="hero-left">
             <h1 className="hero-title">
               Всё для ваших <br />
@@ -58,7 +51,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Правая колонка: Описание */}
           <div className="hero-right">
             АИС дистанционной торговли зоотоварами. 
             Персонализация, бонусы и быстрая доставка кормов и аксессуаров.
@@ -66,10 +58,8 @@ export default function HomePage() {
 
         </div>
 
-        {/* Идеальная одинарная анимированная SVG-волна без лишних линий */}
         <div className="waves-container">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            {/* Однотонный бесшовный контур волны, уходящий в бесконечную анимацию */}
             <path 
               d="M0,60 C150,100 350,20 500,60 C650,100 850,20 1000,60 C1150,100 1350,20 1500,60 C1650,100 1850,20 2000,60 C2150,100 2350,20 2400,60 L2400,120 L0,120 Z" 
               fill="#ffffff" 
@@ -79,7 +69,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. СЕКЦИЯ ПРЕИМУЩЕСТВ */}
       <section className="advantages-section">
         <div className="adv-container">
           
@@ -91,7 +80,7 @@ export default function HomePage() {
 
           <div className="adv-grid">
             
-            {/* Карточка 1 (Темно-синяя) */}
+
             <div className="card card-darkblue">
               <div>
                 <div className="card-icon">🏆</div>
@@ -102,7 +91,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Карточка 2 (Сочно-зеленая) */}
             <div className="card card-green">
               <div>
                 <div className="card-icon">🔬</div>
@@ -113,7 +101,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Карточка 3 (Сине-голубая) */}
             <div className="card card-blue">
               <div>
                 <div className="card-icon">⚡</div>
@@ -124,7 +111,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Карточка 4 (Ультра-темная) */}
+
             <div className="card card-navy">
               <div>
                 <div className="card-icon">🎁</div>

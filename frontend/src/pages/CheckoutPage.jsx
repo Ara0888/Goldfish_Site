@@ -244,7 +244,6 @@ export default function CheckoutPage() {
           </div>
         </aside>
       </div>
-
       {showAuthModal && (
         <div className="modal-overlay active" onClick={() => setShowAuthModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>

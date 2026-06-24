@@ -31,7 +31,6 @@ export default function FavoritesPage() {
     alt={p.name}
     loading="lazy"
     onError={(e) => {
-      // Если фото не загрузилось, показываем эмодзи
       e.target.style.display = 'none';
       e.target.parentElement.innerHTML += `<span style="font-size: 64px;">${p.icon}</span>`;
     }}

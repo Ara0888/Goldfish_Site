@@ -1,4 +1,4 @@
-/* Layout styles */
+
 .lk-layout {
   display: flex;
   max-width: 1200px;
@@ -48,7 +48,7 @@
   min-height: 500px;
 }
 
-/* Account header inside content */
+
 .account-header {
   display: flex;
   align-items: center;
@@ -81,7 +81,6 @@
   font-size: 0.9rem;
 }
 
-/* Pet item styles */
 .pet-item {
   background: var(--gray-light);
   padding: 16px;
@@ -181,7 +180,7 @@
   background: var(--navy-dark);
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .lk-layout {
     flex-direction: column;

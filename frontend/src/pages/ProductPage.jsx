@@ -71,7 +71,6 @@ export default function ProductPage() {
           </div>
         </div>
 
-        {/* Информация о товаре */}
         <div className="product-info-section">
           <h1 className="product-title">{product.name}</h1>
           
@@ -117,7 +116,6 @@ export default function ProductPage() {
         </div>
       </div>
 
-      {/* Табы с отзывами */}
       <div className="product-tabs">
         <div className="tabs-nav">
           <button className="tab-button active">Отзывы покупателей</button>
