@@ -6,7 +6,7 @@ export const petTypes = [
   { id: 'Рептилии', name: 'Рептилии', breeds: ['Леопардовый геккон', 'Бородатая агама', 'Красноухая черепаха', 'Игуана'] }
 ];
 
-// Проверка совместимости корма с особенностями питомца
+
 export function checkCompatibility(product, pet) {
   if (!pet || !pet.specialNeeds) return { compatible: true, reason: '' };
   

@@ -1,4 +1,3 @@
-// ===== ДАННЫЕ КАТАЛОГА =====
 export const catalogData = {
   cats: {
     brands: ["Farmina N&D", "Acana", "Orijen", "Grandorf", "Royal Canin Veterinary", "Monge Superpremium", "Brit Care", "Almo Nature Legend", "Applaws", "Now Fresh"],
@@ -32,8 +31,6 @@ export const catalogData = {
   }
 };
 
-
-// ===== ГЕНЕРАЦИЯ ВСЕХ ТОВАРОВ =====
 export function generateAllProducts() {
   const products = [];
   let id = 1;
@@ -77,13 +74,13 @@ const imageUrls = {
   categories.forEach(cat => {
     const data = catalogData[cat];
     
-    // Проверка на существование данных
+
     if (!data) {
       console.error(`Нет данных для категории: ${cat}`);
       return;
     }
     
-    for (let i = 0; i < 20; i++) { // Уменьшено с 100 до 20 для производительности
+    for (let i = 0; i < 20; i++) {
       const brand = data.brands[i % data.brands.length];
       const base = data.bases[Math.floor(i / 10) % data.bases.length];
       const type = data.types[i % data.types.length];
@@ -102,7 +99,7 @@ const imageUrls = {
         oldPrice: i % 7 === 0 ? Math.round(price * 1.2 / 10) * 10 : null,
         badge: i === 0 ? 'Хит' : (i === 1 ? 'Новинка' : (i % 13 === 0 ? 'Элит' : '')),
         icon: icons[cat],
-        image: imageUrl, // Добавляем изображение
+        image: imageUrl,
         desc: `${base} ${type}, ${variation}. Премиальное качество от мирового лидера ${brand}.`,
         variation: variation
       });
@@ -111,6 +108,4 @@ const imageUrls = {
   
   return products;
 }
-
-// ===== ЭКСПОРТ СГЕНЕРИРОВАННЫХ ТОВАРОВ =====
 export const allProducts = generateAllProducts();

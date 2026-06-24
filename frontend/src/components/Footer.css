@@ -1,4 +1,3 @@
-/* ===== ПОДВАЛ САЙТА ===== */
 footer {
   background: var(--navy-dark);
   color: var(--white);
@@ -15,7 +14,6 @@ footer {
   margin-bottom: 40px;
 }
 
-/* ===== БРЕНД В ПОДВАЛЕ ===== */
 .footer-brand {
   display: flex;
   flex-direction: column;
@@ -51,7 +49,6 @@ footer {
   margin-top: 8px;
 }
 
-/* ===== КОЛОНКИ ПОДВАЛА ===== */
 .footer-col h4 {
   font-size: var(--font-size-large);
   margin-bottom: 20px;
@@ -83,7 +80,6 @@ footer {
   padding-left: 4px;
 }
 
-/* ===== НИЖНЯЯ ЧАСТЬ ПОДВАЛА ===== */
 .footer-bottom {
   max-width: 1400px;
   margin: 0 auto;
@@ -101,7 +97,6 @@ footer {
   font-size: var(--font-size-base);
 }
 
-/* ===== СОЦИАЛЬНЫЕ ССЫЛКИ ===== */
 .social-links {
   display: flex;
   gap: 12px;
@@ -128,7 +123,7 @@ footer {
   transform: translateY(-3px);
 }
 
-/* ===== АДАПТИВНОСТЬ ПОДВАЛА ===== */
+
 @media (max-width: 1024px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;

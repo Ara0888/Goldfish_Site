@@ -1,4 +1,3 @@
-/* ===== ШАПКА САЙТА ===== */
 header {
   background: var(--navy-dark);
   color: var(--white);
@@ -17,7 +16,6 @@ header {
   margin: 0 auto;
 }
 
-/* ===== ЛОГОТИП ===== */
 .logo {
   display: flex;
   align-items: center;
@@ -42,7 +40,6 @@ header {
   color: var(--green-bright);
 }
 
-/* ===== НАВИГАЦИЯ ===== */
 nav {
   display: flex;
   align-items: center;
@@ -72,7 +69,6 @@ nav a.active {
   color: var(--navy-dark);
 }
 
-/* Ссылка корзины */
 nav a.cart-link {
   background: rgba(126, 224, 126, 0.15);
   border: 1px solid rgba(126, 224, 126, 0.3);
@@ -83,7 +79,6 @@ nav a.cart-link:hover {
   color: var(--navy-dark);
 }
 
-/* ===== БУРГЕР МЕНЮ ===== */
 .burger {
   display: none;
   flex-direction: column;
@@ -115,7 +110,6 @@ nav a.cart-link:hover {
   transform: rotate(-45deg) translate(5px, -6px);
 }
 
-/* ===== АДАПТИВНОСТЬ ШАПКИ ===== */
 @media (max-width: 768px) {
   .burger {
     display: flex;

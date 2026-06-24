@@ -7,13 +7,11 @@ const GoldfishIcon = ({ size = 40, className = '' }) => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <defs>
-      {/* Золотой градиент для рыбки */}
       <linearGradient id="fishGoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stopColor="#FFD700"/>
         <stop offset="100%" stopColor="#FF8C00"/>
       </linearGradient>
       
-      {/* Золотой градиент для рамки */}
       <linearGradient id="borderGoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stopColor="#FFD700"/>
         <stop offset="50%" stopColor="#FFA500"/>
@@ -21,7 +19,7 @@ const GoldfishIcon = ({ size = 40, className = '' }) => (
       </linearGradient>
     </defs>
     
-    {/* Голубой фон кружка */}
+
     <circle 
       cx="50" 
       cy="50" 
@@ -29,7 +27,7 @@ const GoldfishIcon = ({ size = 40, className = '' }) => (
       fill="#4FC3F7"
     />
     
-    {/* Золотая рамка */}
+
     <circle 
       cx="50" 
       cy="50" 
@@ -39,7 +37,7 @@ const GoldfishIcon = ({ size = 40, className = '' }) => (
       strokeWidth="3"
     />
     
-    {/* Тело рыбки */}
+
     <ellipse 
       cx="50" 
       cy="50" 
@@ -49,25 +47,25 @@ const GoldfishIcon = ({ size = 40, className = '' }) => (
       transform="rotate(-10 50 50)"
     />
     
-    {/* Хвост */}
+
     <path 
       d="M 25 50 L 10 35 L 10 65 Z" 
       fill="url(#fishGoldGradient)"
     />
     
-    {/* Верхний плавник */}
+
     <path 
       d="M 45 32 Q 50 20 55 32" 
       fill="url(#fishGoldGradient)"
     />
     
-    {/* Нижний плавник */}
+
     <path 
       d="M 45 68 Q 50 80 55 68" 
       fill="url(#fishGoldGradient)"
     />
     
-    {/* Глаз */}
+
     <circle 
       cx="62" 
       cy="46" 
@@ -81,7 +79,6 @@ const GoldfishIcon = ({ size = 40, className = '' }) => (
       fill="white"
     />
     
-    {/* Жабры */}
     <path 
       d="M 58 40 Q 60 50 58 60" 
       stroke="#FF8C00" 

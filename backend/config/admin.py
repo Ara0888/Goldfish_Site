@@ -31,7 +31,6 @@ class ReviewAdmin(admin.ModelAdmin):
         queryset.update(Moderation_Status='rejected')
     reject_reviews.short_description = "Отклонить выбранные отзывы"
 
-# Регистрация остальных моделей для полноты CRUD в админке
 admin.site.register(User)
 admin.site.register(Client_Profile)
 admin.site.register(Address)

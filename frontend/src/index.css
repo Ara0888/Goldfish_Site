@@ -1,4 +1,3 @@
-/* ===== CSS ПЕРЕМЕННЫЕ ===== */
 :root {
   --navy-dark: #0B0B3B;
   --navy-medium: #1A1A5E;
@@ -23,7 +22,6 @@
   --radius-sm: 8px;
 }
 
-/* ===== СБРОС И БАЗОВЫЕ СТИЛИ ===== */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -72,7 +70,6 @@ img {
   display: block;
 }
 
-/* ===== КНОПКИ (общие) ===== */
 .btn {
   padding: 10px 24px;
   border: none;
@@ -145,7 +142,6 @@ img {
   background: #ff4747;
 }
 
-/* ===== ФОРМЫ (общие) ===== */
 .form-group {
   margin-bottom: 20px;
 }
@@ -198,7 +194,6 @@ img {
   accent-color: var(--green-bright);
 }
 
-/* ===== МОДАЛЬНЫЕ ОКНА ===== */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -309,7 +304,6 @@ img {
   border-radius: 3px 3px 0 0;
 }
 
-/* ===== ОБЩИЕ СЕКЦИИ ===== */
 section {
   padding: 80px 5%;
 }

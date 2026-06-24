@@ -10,10 +10,9 @@ export default function AccessibilityPanel() {
   const changeFontSize = (dir) => {
     const next = dir === 'up' ? Math.min(fontSize + 1, 3) : Math.max(fontSize - 1, 0);
     
-    // Удаляем все классы размеров
+
     document.body.classList.remove('font-large', 'font-xlarge', 'font-xxlarge');
     
-    // Добавляем новый класс
     if (next > 0) {
       document.body.classList.add(sizes[next]);
     }

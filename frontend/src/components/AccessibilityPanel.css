@@ -1,4 +1,3 @@
-/* ===== ПАНЕЛЬ СПЕЦИАЛЬНЫХ ВОЗМОЖНОСТЕЙ ===== */
 .accessibility-panel {
   position: fixed;
   top: 50%;
@@ -38,7 +37,6 @@
   transform: scale(0.95);
 }
 
-/* ===== СКРЫТЫЙ ТЕКСТ ДЛЯ СКРИНРИДЕРОВ ===== */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -51,7 +49,6 @@
   border: 0;
 }
 
-/* ===== ССЫЛКА ДЛЯ ПЕРЕХОДА К КОНТЕНТУ ===== */
 .skip-link {
   position: absolute;
   top: -100%;
@@ -71,7 +68,6 @@
   top: 10px;
 }
 
-/* ===== РЕЖИМ ВЫСОКОЙ КОНТРАСТНОСТИ ===== */
 body.high-contrast {
   --gray-light: #000;
   --gray-medium: #333;
@@ -88,7 +84,6 @@ body.high-contrast .modal-content {
   border: 2px solid #fff;
 }
 
-/* ===== УВЕЛИЧЕННЫЕ РАЗМЕРЫ ШРИФТА ===== */
 body.font-large {
   font-size: 18px !important;
 }
@@ -121,7 +116,6 @@ body.font-xxlarge p {
   line-height: 1.8 !important;
 }
 
-/* ===== АДАПТИВНОСТЬ ПАНЕЛИ ДОСТУПНОСТИ ===== */
 @media (max-width: 768px) {
   .accessibility-panel {
     top: auto;

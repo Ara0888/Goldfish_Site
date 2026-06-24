@@ -40,7 +40,6 @@ class ApplyPromocodeView(APIView):
                 'error': 'Промокод недействителен или истек'
             }, status=status.HTTP_400_BAD_REQUEST)
         
-        # Получаем корзину пользователя
         cart = get_object_or_404(Cart, user=request.user)
         cart_total = cart.total_price
         
@@ -49,7 +48,6 @@ class ApplyPromocodeView(APIView):
                 'error': f'Минимальная сумма заказа для промокода: {promocode.min_order_amount}'
             }, status=status.HTTP_400_BAD_REQUEST)
         
-        # Расчет скидки
         if promocode.discount_type == 'percent':
             discount = (cart_total * promocode.discount_value) / 100
         else:
@@ -103,17 +101,14 @@ class OrderCreateView(APIView):
                 'error': 'Корзина пуста'
             }, status=status.HTTP_400_BAD_REQUEST)
         
-        # Проверяем наличие товаров на складе
         for item in cart.items.all():
             if item.product.stock_quantity < item.quantity:
                 return Response({
                     'error': f'Недостаточно товара "{item.product.title}" на складе'
                 }, status=status.HTTP_400_BAD_REQUEST)
         
-        # Получаем адрес
         address = get_object_or_404(Address, id=serializer.validated_data['address_id'], user=request.user)
         
-        # Создаем заказ
         order = Order.objects.create(
             user=request.user,
             address=address,
@@ -126,13 +121,12 @@ class OrderCreateView(APIView):
             },
             delivery_method=serializer.validated_data['delivery_method'],
             subtotal=cart.total_price,
-            delivery_price=Decimal('0'),  # Можно рассчитать отдельно
+            delivery_price=Decimal('0'),
             discount_total=Decimal('0'),
             total_amount=cart.total_price,
             status='pending'
         )
         
-        # Создаем элементы заказа
         for cart_item in cart.items.all():
             OrderItem.objects.create(
                 order=order,
@@ -143,11 +137,9 @@ class OrderCreateView(APIView):
                 total_price=cart_item.total_price
             )
             
-            # Уменьшаем количество на складе
             cart_item.product.stock_quantity -= cart_item.quantity
             cart_item.product.save()
         
-        # Очищаем корзину
         cart.items.all().delete()
         cart.status = 'converted'
         cart.save()
@@ -172,7 +164,6 @@ class CancelOrderView(APIView):
                 'error': 'Невозможно отменить заказ в текущем статусе'
             }, status=status.HTTP_400_BAD_REQUEST)
         
-        # Возвращаем товары на склад
         for item in order.items.all():
             if item.product:
                 item.product.stock_quantity += item.quantity

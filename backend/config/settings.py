@@ -1,19 +1,18 @@
 import os
 from pathlib import Path
 
-# Базовая директория проекта
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Секретный ключ (для разработки можно использовать фиксированный)
 SECRET_KEY = 'django-insecure-8x@&8xq$2x8x8x8x8x8x8x8x8x8x8x8x8x8x8x8x8x8x8x'
 
-# Режим отладки
+
 DEBUG = True
 
-# Разрешенные хосты
+
 ALLOWED_HOSTS = ['*']
 
-# Установленные приложения
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -21,20 +20,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    # Сторонние приложения
+
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
     
-    # Собственные приложения
     'apps.users',
     'apps.catalog',
     'apps.cart',
     'apps.orders',
 ]
 
-# Промежуточное ПО
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',  # Должен быть выше CommonMiddleware
@@ -46,15 +42,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Корневой URLconf
 ROOT_URLCONF = 'config.urls'
 
-# Настройки шаблонов
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # если есть папка templates
-        'APP_DIRS': True,  # <-- ВАЖНО! Должно быть True
+        'DIRS': [BASE_DIR / 'templates'],
+        'APP_DIRS': True, 
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -66,10 +60,9 @@ TEMPLATES = [
     },
 ]
 
-# WSGI приложение
+
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# База данных (SQLite для разработки)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -81,7 +74,6 @@ DATABASES = {
     }
 }
 
-# Валидация паролей
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -97,27 +89,26 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Интернационализация
+
 LANGUAGE_CODE = 'ru-ru'
 TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 USE_TZ = True
 
-# Статические файлы
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# Медиа файлы (загружаемые пользователем)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Поле автоматического инкремента
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Кастомная модель пользователя
+
 AUTH_USER_MODEL = 'users.User'
 
-# Настройки Django REST Framework
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -129,7 +120,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 20,
 }
 
-# Настройки JWT токенов
+
 from datetime import timedelta
 
 SIMPLE_JWT = {
@@ -147,7 +138,7 @@ SIMPLE_JWT = {
     'TOKEN_TYPE_CLAIM': 'token_type',
 }
 
-# CORS настройки (для связи с React)
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
@@ -157,5 +148,5 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
-# Дополнительные настройки для загрузки файлов
-FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880  # 5 MB
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880 
