@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { allProducts } from '../data/catalogData';
 import { useCart } from '../context/CartContext';
+import './PromosPage.css';
 
 export default function PromosPage() {
   const { addToCart } = useCart();
@@ -27,27 +28,24 @@ export default function PromosPage() {
       </div>
 
       {/* Сетка промокодов */}
-      <div className="promo-grid">
-        {promoCodes.map((promo, idx) => (
-          <div key={idx} className="promo-card">
-            <div className="promo-code">{promo.code}</div>
-            <p style={{ opacity: 0.9, marginBottom: '20px' }}>{promo.desc}</p>
-            <button 
-              className="btn btn-secondary" 
-              onClick={() => copyCode(promo.code)}
-              style={{ 
-                background: copiedCode === promo.code ? 'var(--green-bright)' : 'transparent', 
-                color: copiedCode === promo.code ? 'var(--navy-dark)' : 'var(--green-bright)', 
-                borderColor: 'var(--green-bright)' 
-              }}
-            >
-              {copiedCode === promo.code ? '✓ Скопировано' : 'Копировать'}
-            </button>
-          </div>
-        ))}
-      </div>
+      <div className="promo-cards-grid">
+  {promoCodes.map((promo, idx) => (
+    <div key={idx} className="promo-card-item">
+      <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--green-bright)', marginBottom: '8px' }}>{promo.code}</div>
+      <p style={{ opacity: 0.9, marginBottom: '20px' }}>{promo.desc}</p>
+      <button 
+        className="btn-copy-code"
+        onClick={() => copyCode(promo.code)}
+      >
+        {copiedCode === promo.code ? '✓ Скопировано' : 'Копировать'}
+      </button>
+    </div>
+  ))}
+</div>
 
-      <div className="section-header"><h2>Товары со <span>скидкой</span></h2></div>
+      <div className="section-header" style={{ marginTop: '60px' }}>
+        <h2>Товары со <span>скидкой</span></h2>
+      </div>
       <div className="products-grid">
         {saleProducts.map(p => (
           <div key={p.id} className="product-card">
@@ -62,7 +60,7 @@ export default function PromosPage() {
                   <span className="price">{p.price} ₽</span>
                   <span style={{ textDecoration: 'line-through', color: 'var(--gray-text)', fontSize: '0.9rem', marginLeft: '8px' }}>{p.oldPrice} ₽</span>
                 </div>
-                <button className="btn-cart" onClick={() => addToCart(p)}>🛒</button>
+                <button className="btn-cart" style={{background: '#004200'}} onClick={() => addToCart(p)}>🛒</button>
               </div>
             </div>
           </div>

@@ -1,0 +1,274 @@
+/* ===== СТРАНИЦА АКЦИЙ И ПРОМОКОДОВ ===== */
+.promos-page {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 5%;
+}
+
+.promos-hero {
+  background: linear-gradient(135deg, var(--navy-dark), var(--blue-medium));
+  color: var(--white);
+  padding: 60px 40px;
+  border-radius: var(--radius);
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.promos-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: var(--green-bright);
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.promos-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.promos-hero p {
+  font-size: var(--font-size-large);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.promo-section-title {
+  font-size: 2rem;
+  color: var(--navy-dark);
+  margin-bottom: 30px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.promo-section-title span {
+  color: var(--blue-medium);
+}
+
+.promo-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* Фиксировано 3 колонки */
+  gap: 28px;
+  margin-bottom: 60px;
+}
+
+/* Для планшетов - 2 колонки */
+@media (max-width: 1024px) {
+  .promo-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Для мобильных - 1 колонка */
+@media (max-width: 768px) {
+  .promo-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.promo-card-item {
+  background: linear-gradient(135deg, var(--navy-dark), var(--blue-medium));
+  color: var(--white);
+  padding: 36px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-card-item::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  background: var(--green-bright);
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.promo-card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.promo-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.promo-discount-badge {
+  background: var(--green-bright);
+  color: var(--navy-dark);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.promo-card-body h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.promo-card-body p {
+  opacity: 0.9;
+  margin-bottom: 20px;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+.promo-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.promo-validity {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.btn-copy-code {
+  background: transparent;
+  color: var(--green-bright);
+  border: 2px solid var(--green-bright);
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.btn-copy-code:hover {
+  background: var(--green-bright);
+  color: var(--navy-dark);
+}
+
+.promo-benefits {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  margin-bottom: 60px;
+}
+
+.promo-benefits h2 {
+  font-size: 2rem;
+  color: var(--navy-dark);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 24px;
+}
+
+.benefit-icon {
+  font-size: 60px;
+  margin-bottom: 16px;
+}
+
+.benefit-item h3 {
+  font-size: 1.2rem;
+  color: var(--navy-dark);
+  margin-bottom: 8px;
+}
+
+.benefit-item p {
+  color: var(--gray-text);
+  line-height: 1.6;
+}
+
+.newsletter-promo {
+  background: linear-gradient(135deg, var(--green-bright), var(--green-light));
+  padding: 60px 40px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.newsletter-promo h2 {
+  font-size: 2.2rem;
+  color: var(--navy-dark);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.newsletter-promo p {
+  font-size: var(--font-size-large);
+  color: var(--navy-dark);
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 16px 20px;
+  border: 2px solid var(--navy-dark);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+}
+
+.newsletter-form .btn {
+  padding: 16px 32px;
+  background: var(--navy-dark);
+  color: var(--white);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .promo-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .promo-hero h1 {
+    font-size: 2rem;
+  }
+}
+

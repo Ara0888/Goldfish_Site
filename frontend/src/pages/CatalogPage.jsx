@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { allProducts, catalogData } from '../data/catalogData';
 import { useCart } from '../context/CartContext';
 import { useFavorites } from '../context/FavoritesContext';
+import './CatalogPage.css';
 
 export default function CatalogPage() {
   const { addToCart } = useCart();
@@ -15,7 +16,7 @@ export default function CatalogPage() {
 
   const categories = [
     { id: 'all', name: 'Все категории' },
-    { id: 'cats', name: ' Кошки' }, { id: 'dogs', name: '🐶 Собаки' },
+    { id: 'cats', name: '😺 Кошки' }, { id: 'dogs', name: '🐶 Собаки' },
     { id: 'fish', name: '🐠 Рыбы' }, { id: 'birds', name: '🦜 Птицы' }, { id: 'reptiles', name: '🦎 Рептилии' }
   ];
 
@@ -49,7 +50,7 @@ export default function CatalogPage() {
           <label>🔍 Поиск</label>
           <input 
             type="text" 
-            placeholder="Название или бренд..." 
+            placeholder="Название или бренд" 
             value={searchQuery} 
             onChange={e => setSearchQuery(e.target.value)} 
           />
@@ -108,12 +109,24 @@ export default function CatalogPage() {
                     <span className="price">{p.price} ₽</span>
                     {p.oldPrice && <span style={{ textDecoration: 'line-through', color: 'var(--gray-text)', fontSize: '0.9rem', marginLeft: '8px' }}>{p.oldPrice} ₽</span>}
                   </div>
-                  <div style={{ display: 'flex', gap: '8px' }}>
-                    <button className="btn-cart" style={{ background: favorites.some(f => f.id === p.id) ? '#FF6B6B' : 'var(--green-bright)' }} onClick={(e) => { e.preventDefault(); toggleFavorite(p); }} title="В избранное">
-                      {favorites.some(f => f.id === p.id) ? '❤️' : ''}
-                    </button>
-                    <button className="btn-cart" onClick={(e) => { e.preventDefault(); addToCart(p); }} title="В корзину">🛒</button>
-                  </div>
+                  <div className="product-actions">
+  <button 
+    className={`btn-cart favorite-btn ${favorites.some(f => f.id === p.id) ? 'active' : ''}`} 
+    onClick={(e) => { e.preventDefault(); toggleFavorite(p); }} 
+    title="В избранное"
+    type="button"
+  >
+    {favorites.some(f => f.id === p.id) ? '❤️' : '❤️'}
+  </button>
+  <button 
+    className="btn-cart add-to-cart" 
+    onClick={(e) => { e.preventDefault(); addToCart(p); }} 
+    title="В корзину"
+    type="button"
+  >
+    🛒
+  </button>
+</div>
                 </div>
               </div>
             </Link>

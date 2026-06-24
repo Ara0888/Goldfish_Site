@@ -1,0 +1,222 @@
+/* ===== СТРАНИЦА ИЗБРАННОГО ===== */
+.favorites-page {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 5%;
+}
+
+.favorites-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.favorites-title {
+  font-size: 2.5rem;
+  color: var(--navy-dark);
+  font-weight: 700;
+}
+
+.favorites-count {
+  background: var(--blue-medium);
+  color: var(--white);
+  padding: 8px 20px;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: var(--font-size-base);
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.favorite-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+  position: relative;
+}
+
+.favorite-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.favorite-card-image {
+  height: 220px;
+  background: linear-gradient(135deg, var(--gray-light), var(--gray-medium));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.favorite-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.favorite-card:hover .favorite-card-image img {
+  transform: scale(1.08);
+}
+
+.favorite-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--green-bright);
+  color: var(--navy-dark);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.favorite-card-badge.sale {
+  background: var(--red-error);
+  color: var(--white);
+}
+
+.favorite-card-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+}
+
+.favorite-action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--white);
+  color: var(--navy-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition);
+  font-size: 1.2rem;
+}
+
+.favorite-action-btn:hover {
+  background: var(--red-error);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+.favorite-card-info {
+  padding: 20px;
+}
+
+.favorite-card-info h3 {
+  font-size: 1.2rem;
+  color: var(--navy-dark);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.favorite-card-category {
+  color: var(--gray-text);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.favorite-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.favorite-card-price {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+}
+
+.favorite-card-price .old-price {
+  font-size: 1rem;
+  color: var(--gray-text);
+  text-decoration: line-through;
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+.btn-add-to-cart {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--green-bright);
+  border: none;
+  color: var(--navy-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: all var(--transition);
+}
+
+.btn-add-to-cart:hover {
+  background: var(--navy-dark);
+  color: var(--green-bright);
+  transform: scale(1.1);
+}
+
+.favorites-empty {
+  text-align: center;
+  padding: 100px 40px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.favorites-empty-icon {
+  font-size: 120px;
+  margin-bottom: 24px;
+  opacity: 0.4;
+}
+
+.favorites-empty h2 {
+  font-size: 2rem;
+  color: var(--navy-dark);
+  margin-bottom: 12px;
+}
+
+.favorites-empty p {
+  color: var(--gray-text);
+  margin-bottom: 30px;
+  font-size: var(--font-size-large);
+}
+
+.favorites-empty .btn {
+  padding: 14px 32px;
+  font-size: var(--font-size-large);
+}
+
+@media (max-width: 768px) {
+  .favorites-header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Navigate } from 'react-router-dom';
 import { petTypes } from '../data/petData';
+import './AccountPage.css';
 
 export default function AccountPage() {
   const { user, logout, addPet } = useAuth();
@@ -47,7 +48,7 @@ export default function AccountPage() {
 
         {activeTab === 'pets' && (
           <>
-            <h3>Профили питомцев</h3>
+            <h3>Введите данные о питомце</h3>
             <p style={{color: 'var(--gray-text)', marginBottom: '16px'}}>Система подберёт рацион на основе этих данных и отметит неподходящие товары.</p>
             
             {user.pets?.map(pet => (

@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { useState } from 'react';
+import GoldfishIcon from './GoldfishIcon';
+import './Header.css';
 
 export default function Header() {
   const { user } = useAuth();
@@ -13,7 +15,7 @@ export default function Header() {
     <header role="banner">
       <div className="header-top">
         <Link to="/" className="logo" aria-label="Золотая рыбка - на главную">
-          <div className="logo-icon"></div>
+          <GoldfishIcon size={40} className="logo-icon" />
           <div className="logo-text">Золотая <span>рыбка</span></div>
         </Link>
 

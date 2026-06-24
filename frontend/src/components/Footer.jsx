@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import GoldfishIcon from './GoldfishIcon';
+import './Footer.css';
 
 export default function Footer() {
   return (
@@ -6,10 +8,11 @@ export default function Footer() {
       <div className="footer-grid">
         <div className="footer-brand">
           <Link to="/" className="logo" aria-label="Золотая рыбка — на главную">
-            <div className="logo-icon">🐠</div>
+            <GoldfishIcon size={40} className="logo-icon" />
             <div className="logo-text">Золотая <span>рыбка</span></div>
           </Link>
-          <p>АИС дистанционной торговли элитными зоотоварами. Персонализация, бонусы и быстрая доставка.</p>
+          <p>АИС дистанционной торговли зоотоварами.</p>
+          <p>Персонализация, бонусы и быстрая доставка.</p>
         </div>
         <div className="footer-col">
           <h4>Навигация</h4>
@@ -40,7 +43,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2026 ГБПОУ МО «ЛАТ». АИС-ЗР-2026. Все права защищены.</p>
+        <p>©АИС-ЗР-2026. Все права защищены.</p>
         <div className="social-links">
           <a href="#" aria-label="ВКонтакте">VK</a>
           <a href="#" aria-label="Telegram">TG</a>

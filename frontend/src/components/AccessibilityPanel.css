@@ -1,0 +1,139 @@
+/* ===== ПАНЕЛЬ СПЕЦИАЛЬНЫХ ВОЗМОЖНОСТЕЙ ===== */
+.accessibility-panel {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.accessibility-panel button {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--navy-dark);
+  background: var(--white);
+  color: var(--navy-dark);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  transition: all var(--transition);
+}
+
+.accessibility-panel button:hover,
+.accessibility-panel button:focus {
+  background: var(--navy-dark);
+  color: var(--white);
+  outline: 3px solid var(--green-bright);
+  outline-offset: 2px;
+}
+
+.accessibility-panel button:active {
+  transform: scale(0.95);
+}
+
+/* ===== СКРЫТЫЙ ТЕКСТ ДЛЯ СКРИНРИДЕРОВ ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== ССЫЛКА ДЛЯ ПЕРЕХОДА К КОНТЕНТУ ===== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy-dark);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  z-index: 10000;
+  font-size: var(--font-size-large);
+  text-decoration: none;
+  transition: top var(--transition);
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* ===== РЕЖИМ ВЫСОКОЙ КОНТРАСТНОСТИ ===== */
+body.high-contrast {
+  --gray-light: #000;
+  --gray-medium: #333;
+  --navy-dark: #fff;
+  --navy-medium: #ccc;
+  --gray-text: #fff;
+  --white: #000;
+}
+
+body.high-contrast header,
+body.high-contrast footer,
+body.high-contrast .product-card,
+body.high-contrast .modal-content {
+  border: 2px solid #fff;
+}
+
+/* ===== УВЕЛИЧЕННЫЕ РАЗМЕРЫ ШРИФТА ===== */
+body.font-large {
+  font-size: 18px !important;
+}
+
+body.font-xlarge {
+  font-size: 20px !important;
+}
+
+body.font-xxlarge {
+  font-size: 22px !important;
+}
+
+body.font-large *,
+body.font-xlarge *,
+body.font-xxlarge * {
+  font-size: inherit;
+}
+
+body.font-large h1 { font-size: 3.5rem !important; }
+body.font-xlarge h1 { font-size: 4rem !important; }
+body.font-xxlarge h1 { font-size: 4.5rem !important; }
+
+body.font-large h2 { font-size: 2.8rem !important; }
+body.font-xlarge h2 { font-size: 3.2rem !important; }
+body.font-xxlarge h2 { font-size: 3.6rem !important; }
+
+body.font-large p,
+body.font-xlarge p,
+body.font-xxlarge p {
+  line-height: 1.8 !important;
+}
+
+/* ===== АДАПТИВНОСТЬ ПАНЕЛИ ДОСТУПНОСТИ ===== */
+@media (max-width: 768px) {
+  .accessibility-panel {
+    top: auto;
+    bottom: 80px;
+    right: 10px;
+    transform: none;
+    flex-direction: row;
+  }
+
+  .accessibility-panel button {
+    border-radius: var(--radius-sm);
+    width: 44px;
+    height: 44px;
+  }
+}

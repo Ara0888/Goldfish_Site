@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import './AuthPage.css';
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
@@ -9,6 +10,7 @@ export default function AuthPage() {
   const [formData, setFormData] = useState({ name: '', email: '', password: '', orgName: '' });
   const [recoveryEmail, setRecoveryEmail] = useState('');
   const [recoverySent, setRecoverySent] = useState(false);
+
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -35,72 +37,150 @@ export default function AuthPage() {
 
   if (showRecovery) {
     return (
-      <div className="auth-box">
-        <h2 style={{ marginBottom: '20px' }}>Восстановление пароля</h2>
-        {recoverySent ? (
-          <div>
-            <p style={{ marginBottom: '20px' }}>✅ Ссылка для восстановления отправлена на <strong>{recoveryEmail}</strong></p>
-            <button className="btn btn-primary" onClick={() => { setShowRecovery(false); setRecoverySent(false); }} style={{ width: '100%' }}>Вернуться ко входу</button>
-          </div>
-        ) : (
-          <form onSubmit={handleRecovery}>
-            <div className="form-group">
-              <label>Email <span className="required">*</span></label>
-              <input type="email" required value={recoveryEmail} onChange={e => setRecoveryEmail(e.target.value)} />
+      <div className="auth-page">
+        <div className="auth-container">
+          <h2 style={{ marginBottom: '20px', textAlign: 'center' }}>
+            Восстановление пароля
+          </h2>
+
+          {recoverySent ? (
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ marginBottom: '20px' }}>
+                ✅ Ссылка для восстановления отправлена на{' '}
+                <strong>{recoveryEmail}</strong>
+              </p>
+              <button
+                className="btn btn-primary"
+                onClick={() => { setShowRecovery(false); setRecoverySent(false); }}
+                style={{ width: '100%' }}
+              >
+                Вернуться ко входу
+              </button>
             </div>
-            <button type="submit" className="btn btn-primary btn-large" style={{ width: '100%' }}>Отправить ссылку</button>
-            <button type="button" className="btn btn-outline" style={{ width: '100%', marginTop: '12px' }} onClick={() => setShowRecovery(false)}>Назад</button>
-          </form>
-        )}
+          ) : (
+            <form onSubmit={handleRecovery} className="auth-form">
+              <div className="form-group">
+                <label>
+                  Email <span className="required">*</span>
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={recoveryEmail}
+                  onChange={(e) => setRecoveryEmail(e.target.value)}
+                />
+              </div>
+              <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
+                Отправить ссылку
+              </button>
+              <button
+                type="button"
+                className="btn btn-outline"
+                style={{ width: '100%' }}
+                onClick={() => setShowRecovery(false)}
+              >
+                Назад
+              </button>
+            </form>
+          )}
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="auth-box">
-      <div className="modal-tabs">
-        <button className={`modal-tab ${isLogin ? 'active' : ''}`} onClick={() => setIsLogin(true)}>Вход</button>
-        <button className={`modal-tab ${!isLogin ? 'active' : ''}`} onClick={() => setIsLogin(false)}>Регистрация</button>
-      </div>
-      
-      <form onSubmit={handleSubmit}>
-        {!isLogin && (
-          <div className="form-group">
-            <label>Тип клиента</label>
-            <select value={clientType} onChange={e => setClientType(e.target.value)}>
-              <option value="individual">Физическое лицо</option>
-              <option value="organization">Организация (Приют)</option>
-            </select>
-          </div>
-        )}
-        
-        <div className="form-group">
-          <label>Email <span className="required">*</span></label>
-          <input type="email" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
-        </div>
+    <div className="auth-page">
+      <div className="auth-container">
 
-        {!isLogin && (
-          <div className="form-group">
-            <label>{clientType === 'organization' ? 'Название организации' : 'Имя'}</label>
-            <input type="text" value={clientType === 'organization' ? formData.orgName : formData.name} onChange={e => setFormData({...formData, [clientType === 'organization' ? 'orgName' : 'name']: e.target.value})} />
-          </div>
-        )}
-        
-        <div className="form-group">
-          <label>Пароль <span className="required">*</span></label>
-          <input type="password" required value={formData.password} onChange={e => setFormData({...formData, password: e.target.value})} />
-        </div>
-        
-        <button type="submit" className="btn btn-primary btn-large" style={{width: '100%'}}>
-          {isLogin ? 'Войти' : 'Зарегистрироваться'}
-        </button>
-
-        {isLogin && (
-          <button type="button" className="btn btn-outline" style={{width: '100%', marginTop: '12px'}} onClick={() => setShowRecovery(true)}>
-            Забыли пароль?
+        {/* Вкладки */}
+        <div className="auth-tabs">
+          <button
+            className={`auth-tab ${isLogin ? 'active' : ''}`}
+            onClick={() => setIsLogin(true)}
+          >
+            Вход
           </button>
-        )}
-      </form>
+          <button
+            className={`auth-tab ${!isLogin ? 'active' : ''}`}
+            onClick={() => setIsLogin(false)}
+          >
+            Регистрация
+          </button>
+        </div>
+
+        {/* Форма */}
+        <form onSubmit={handleSubmit} className="auth-form">
+
+          {!isLogin && (
+            <div className="form-group">
+              <label>Тип клиента</label>
+              <select
+                value={clientType}
+                onChange={(e) => setClientType(e.target.value)}
+              >
+                <option value="individual">Физическое лицо</option>
+                <option value="organization">Организация (Приют)</option>
+              </select>
+            </div>
+          )}
+
+          <div className="form-group">
+            <label>
+              Email <span className="required">*</span>
+            </label>
+            <input
+              type="email"
+              required
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            />
+          </div>
+
+          {!isLogin && (
+            <div className="form-group">
+              <label>
+                {clientType === 'organization' ? 'Название организации' : 'Имя'}
+              </label>
+              <input
+                type="text"
+                value={clientType === 'organization' ? formData.orgName : formData.name}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    [clientType === 'organization' ? 'orgName' : 'name']: e.target.value
+                  })
+                }
+              />
+            </div>
+          )}
+
+          <div className="form-group">
+            <label>
+              Пароль <span className="required">*</span>
+            </label>
+            <input
+              type="password"
+              required
+              value={formData.password}
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+            />
+          </div>
+
+          <button type="submit" className="btn btn-primary">
+            {isLogin ? 'Войти' : 'Зарегистрироваться'}
+          </button>
+
+          {isLogin && (
+            <button
+              type="button"
+              className="btn btn-outline"
+              onClick={() => setShowRecovery(true)}
+            >
+              Забыли пароль?
+            </button>
+          )}
+        </form>
+      </div>
     </div>
   );
 }

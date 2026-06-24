@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Navigate } from 'react-router-dom';
 import { allProducts } from '../data/catalogData';
+import './AdminPage.css';
 
 export default function AdminPage() {
   const { user } = useAuth();

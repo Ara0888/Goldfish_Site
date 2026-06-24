@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Navigate } from 'react-router-dom';
+import './ReturnsPage.css';
 
 export default function ReturnsPage() {
   const { user } = useAuth();
@@ -11,7 +12,6 @@ export default function ReturnsPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Имитация запроса: axios.post('/api/returns/', formData)
     setSubmitted(true);
   };
 
@@ -28,7 +28,7 @@ export default function ReturnsPage() {
 
   return (
     <div className="returns-layout">
-      {/* Форма заявки */}
+      {/* Форма заявки - слева */}
       <div className="cart-list">
         <h2 style={{ marginBottom: '24px' }}>Оформление возврата</h2>
         <form onSubmit={handleSubmit}>
@@ -53,7 +53,7 @@ export default function ReturnsPage() {
         </form>
       </div>
 
-      {/* Информация о политике */}
+      {/* Политика возврата - справа */}
       <div className="returns-info">
         <h3 style={{ marginBottom: '16px' }}>Политика возврата</h3>
         <p style={{ marginBottom: '16px', lineHeight: 1.7 }}>

@@ -1,0 +1,127 @@
+/* ===== СТРАНИЦА АВТОРИЗАЦИИ ===== */
+.auth-page {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 5%;
+  background: linear-gradient(135deg, var(--gray-light) 0%, var(--gray-medium) 100%);
+}
+
+.auth-container {
+  max-width: 420px;
+  width: 100%;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hover);
+  padding: 40px 36px 36px;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--gray-medium);
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  background: none;
+  font-size: var(--font-size-large);
+  font-weight: 600;
+  color: var(--gray-text);
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.auth-tab.active {
+  color: var(--navy-dark);
+}
+
+.auth-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--green-bright);
+  border-radius: 3px 3px 0 0;
+}
+
+.auth-form .form-group {
+  margin-bottom: 20px;
+}
+
+.auth-form .form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--navy-dark);
+}
+
+.auth-form .form-group input,
+.auth-form .form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--gray-medium);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  outline: none;
+  transition: border-color var(--transition);
+  box-sizing: border-box;
+}
+
+.auth-form .form-group input:focus,
+.auth-form .form-group select:focus {
+  border-color: var(--green-bright);
+}
+
+.auth-form .btn {
+  width: 100%;
+  padding: 14px;
+  font-size: var(--font-size-large);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.auth-form .btn-primary {
+  background: var(--green-bright);
+  color: var(--navy-dark);
+  border: none;
+  margin-top: 8px;
+}
+
+.auth-form .btn-primary:hover {
+  background: var(--green-bright);
+  opacity: 0.9;
+}
+
+.auth-form .btn-outline {
+  background: var(--white);
+  color: var(--navy-dark);
+  border: 2px solid var(--blue-medium);
+  margin-top: 12px;
+}
+
+.auth-form .btn-outline:hover {
+  border-color: var(--blue-medium);
+  background: var(--blue-medium);
+  color: var(--white);
+}
+
+.required {
+  color: red;
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 30px 24px 28px;
+  }
+}
