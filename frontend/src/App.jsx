@@ -12,12 +12,10 @@ import AuthPage from './pages/AuthPage';
 import AccountPage from './pages/AccountPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
-import TrackingPage from './pages/TrackingPage';
 import FavoritesPage from './pages/FavoritesPage';
 import PromosPage from './pages/PromosPage';
 import ReturnsPage from './pages/ReturnsPage';
 import ProductPage from './pages/ProductPage';
-import AdminPage from './pages/AdminPage';
 import AccessibilityPanel from './components/AccessibilityPanel';
 
 function App() {

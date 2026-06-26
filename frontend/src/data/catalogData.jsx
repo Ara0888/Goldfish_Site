@@ -47,7 +47,7 @@ const imageUrls = {
     cats: [
       'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=300&fit=crop',
       'https://ir.ozone.ru/s3/multimedia-0/6069495192.jpg',
-      'https://avatars.mds.yandex.net/i?id=7a42657612b4749129992f0f64ce99eb_l-5558644-images-thumbs&n=13'
+      'https://img.magnific.com/premium-psd/sleeping-kitten-white-bedding_538547-8871.jpg?semt=ais_hybrid&w=740'
     ],
     dogs: [
       'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=400&h=300&fit=crop',
