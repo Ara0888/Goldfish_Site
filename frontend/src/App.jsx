@@ -35,12 +35,10 @@ function App() {
                 <Route path="/account" element={<AccountPage />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
-                <Route path="/tracking/:orderId" element={<TrackingPage />} />
                 <Route path="/favorites" element={<FavoritesPage />} />
                 <Route path="/promos" element={<PromosPage />} />
                 <Route path="/returns" element={<ReturnsPage />} />
                 <Route path="/product/:id" element={<ProductPage />} />
-                <Route path="/admin" element={<AdminPage />} />
               </Routes>
             </main>
             <Footer />
